@@ -1004,11 +1004,9 @@
       if (L){ S=L; renderAll(); alert('불러왔어.'); } else { alert('세이브 데이터가 없어.'); }
     });
     byId('btnRestart').addEventListener('click', ()=>{
-      if (confirm('정말 다시 시작할까? 저장 데이터가 모두 초기화돼.')){ 
-        localStorage.removeItem(KEY); 
-        hardReset(); 
-        alert('새 게임을 시작했어.'); 
-      }
+      localStorage.removeItem(KEY); 
+      hardReset(); 
+      alert('새 게임을 시작했어.'); 
     });
 
     window.addEventListener('resize', refreshAvailability);
