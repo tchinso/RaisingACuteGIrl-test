@@ -341,7 +341,7 @@
 "“………”",
 "말은 없었다.\n\n하지만 그 손끝에서 전해지는 감정은 분명했다.",
 "조금 더, 괜찮아.\n\n그녀의 방식으로 내게 말하고 있었다.",
-"고요한 방 안.\n\n두 사람 사이, 불어오는 봄바람처럼\n\n조금, 아주 조금.\n\n서로의 거리가 가까워진 날이었다.",
+"고요한 방 안.\n\n두 사람 사이, 불어오는 봄바람처럼\n\n조금, 아주 조금.\n\n서로의 거리가 가까워진 날이었다."
     ],
     L3: ["","그녀는 요즘, 자주 창밖을 바라봤다.\n\n마치 창틀 너머에 무언가를 붙잡으려는 것처럼.\n\n방 안에 가득한 정적 속에서, 유일하게 바람이 스쳐가는 곳은 그 시선뿐이었다.",
 "그걸 본 순간, 알았다.\n\n──이건 좀 데리고 나가야겠다.",
@@ -1004,9 +1004,11 @@
       if (L){ S=L; renderAll(); alert('불러왔어.'); } else { alert('세이브 데이터가 없어.'); }
     });
     byId('btnRestart').addEventListener('click', ()=>{
-      localStorage.removeItem(KEY); 
-      hardReset(); 
-      alert('새 게임을 시작했어.'); 
+      if (confirm('정말 다시 시작할까? 저장 데이터가 모두 초기화돼.')){ 
+        localStorage.removeItem(KEY); 
+        hardReset(); 
+        alert('새 게임을 시작했어.'); 
+      }
     });
 
     window.addEventListener('resize', refreshAvailability);
